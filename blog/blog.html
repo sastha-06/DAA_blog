@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion vs Iteration - DAA Blog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+        }
+
+        header {
+            background: #0b3d91;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .info {
+            background: linear-gradient(135deg, #e9f1ff 0%, #d4e4ff 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 5px solid #0b3d91;
+        }
+
+        h2 {
+            color: #0b3d91;
+            border-bottom: 3px solid #0b3d91;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: #0b3d91;
+            margin-top: 30px;
+        }
+
+        pre {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #0b3d91;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #0b3d91;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        img {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: block;
+            margin: 20px auto;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Recursion vs Iteration: Understanding Fundamental Algorithm Techniques</h1>
+    </header>
+
+    <div class="container">
+        <div class="info">
+            <p><strong>Author:</strong> Sastha Jeyasri A</p>
+            <p><strong>Register Number:</strong> 24BAD106</p>
+            <p><strong>Course:</strong> Design and Analysis of Algorithms</p>
+            <p><strong>Department:</strong> Artificial Intelligence and Data Science</p>
+            <p><strong>Topic:</strong> Recursion vs Iteration</p>
+            <p><strong>Date:</strong> March 2026</p>
+        </div>
+
+        <h2>Introduction</h2>
+        <p>Recursion and iteration are two important techniques used in algorithm design to solve repetitive problems. Iteration uses looping statements such as <em>for</em> and <em>while</em> loops, whereas recursion uses functions that call themselves until a stopping condition is reached.</p>
+        <p>Understanding these techniques is important in Design and Analysis of Algorithms because it helps programmers choose efficient solutions based on time complexity and space complexity.</p>
+
+        <h2>Diagram Explanation</h2>
+        <img src="iteration vs recursion.png" alt="Iteration vs Recursion">
+        <p><strong>Figure 1:</strong> Iteration and Recursion (Educational illustration generated with AI assistance for learning purposes).</p>
+
+        <h2>Concept of Iteration</h2>
+        <p>Iteration is a process of repeating a set of instructions using loops until a condition becomes false. It is generally preferred when memory efficiency and execution speed are important.</p>
+
+        <h3>Characteristics of Iteration</h3>
+        <ul>
+            <li>Uses loop structures</li>
+            <li>Memory efficient</li>
+            <li>Faster execution</li>
+            <li>No function call overhead</li>
+            <li>Easy to understand</li>
+        </ul>
+
+        <h2>Iteration Algorithm Example (Factorial)</h2>
+        <p><strong>Algorithm:</strong></p>
+        <pre>
+1. Start
+2. Read number n
+3. Initialize fact = 1
+4. Repeat from i = 1 to n
+5. fact = fact × i
+6. Display fact
+7. Stop
+        </pre>
+
+        <h2>Python Example (Iteration)</h2>
+        <pre>
+def factorial_iteration(n):
+    fact = 1
+    for i in range(1,n+1):
+        fact = fact*i
+    return fact
+
+print(factorial_iteration(5))
+        </pre>
+
+        <h2>Concept of Recursion</h2>
+        <p>Recursion is a technique where a function calls itself to solve smaller instances of the same problem. Every recursive function must have a base condition to stop the execution.</p>
+        <p>Recursion is widely used in divide-and-conquer algorithms and tree-based problems.</p>
+
+        <h3>Characteristics of Recursion</h3>
+        <ul>
+            <li>Function calls itself</li>
+            <li>Needs base condition</li>
+            <li>Uses stack memory</li>
+            <li>Good for complex problems</li>
+            <li>Code looks clean and structured</li>
+        </ul>
+
+        <h2>Recursion Algorithm Example (Factorial)</h2>
+        <p><strong>Algorithm:</strong></p>
+        <pre>
+1. Start
+2. Define factorial(n)
+3. If n = 1 return 1
+4. Else return n × factorial(n-1)
+5. Stop
+        </pre>
+
+        <h2>Python Example (Recursion)</h2>
+        <pre>
+def factorial_recursion(n):
+    if n == 1:
+        return 1
+    return n * factorial_recursion(n-1)
+
+print(factorial_recursion(5))
+        </pre>
+
+        <img src="workflow.png" alt="Algorithm Workflow Diagram">
+        <p><strong>Figure 2:</strong> Workflow diagram illustrating the iteration and recursion process (Educational illustration generated with AI assistance for learning purposes).</p>
+
+        <h2>Time and Space Complexity Comparison</h2>
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Time Complexity</th>
+                <th>Space Complexity</th>
+            </tr>
+            <tr>
+                <td>Iteration</td>
+                <td>O(n)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Recursion</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+            </tr>
+        </table>
+        <p>Both approaches take similar time for factorial calculation, but recursion uses additional memory because of function call stack.</p>
+
+        <h2>Diagram Explanation</h2>
+        <img src="complexity.png" alt="Time and Space Complexity Comparison Diagram">
+        <p><strong>Figure 3:</strong> Time and Space Complexity comparison of Iteration and Recursion (Educational illustration generated with AI assistance for learning purposes).</p>
+
+        <h2>Analysis of Complexity Diagram</h2>
+        <p>As shown in Figure 3, iteration and recursion may have similar time complexity depending on the problem. For example, factorial using both methods has O(n) time complexity.</p>
+        <p>However, space complexity differs. Iteration typically uses constant memory O(1) because it only uses variables. Recursion usually requires O(n) memory because each function call is stored in the call stack.</p>
+        <p>It is also important to understand that recursion does not always mean exponential time complexity. Only certain problems like naive Fibonacci recursion have O(2ⁿ) time complexity. Many recursive algorithms such as factorial and binary search have efficient time complexity like O(n) and O(log n).</p>
+
+        <h2>Difference Between Recursion and Iteration</h2>
+        <p>The following table summarizes the major differences between iteration and recursion based on structure, performance, and memory usage.</p>
+        <table>
+            <tr>
+                <th>Iteration</th>
+                <th>Recursion</th>
+            </tr>
+            <tr>
+                <td>Uses loops</td>
+                <td>Uses function calls</td>
+            </tr>
+            <tr>
+                <td>Faster execution</td>
+                <td>Slightly slower</td>
+            </tr>
+            <tr>
+                <td>Uses less memory</td>
+                <td>Uses more memory</td>
+            </tr>
+            <tr>
+                <td>Simple structure</td>
+                <td>Elegant structure</td>
+            </tr>
+            <tr>
+                <td>No stack usage</td>
+                <td>Uses call stack</td>
+            </tr>
+        </table>
+
+        <h2>Advantages of Iteration</h2>
+        <ul>
+            <li>Faster performance</li>
+            <li>Less memory usage</li>
+            <li>Simple implementation</li>
+            <li>No stack overflow risk</li>
+        </ul>
+
+        <h2>Advantages of Recursion</h2>
+        <ul>
+            <li>Cleaner code</li>
+            <li>Natural solution for some problems</li>
+            <li>Useful in divide and conquer</li>
+            <li>Reduces code length</li>
+        </ul>
+
+        <h2>When to Use Recursion vs Iteration</h2>
+        <p>Iteration should be used when performance and memory efficiency are important.</p>
+        <p>Recursion should be used when problems can be divided into smaller similar subproblems.</p>
+        <p>In practice, iteration is often preferred when memory is limited, while recursion is preferred when the problem naturally follows a recursive structure such as tree traversal or divide-and-conquer algorithms.</p>
+        <p><strong>Examples where recursion is useful:</strong></p>
+        <ul>
+            <li>Binary Search</li>
+            <li>Merge Sort</li>
+            <li>Tree Traversal</li>
+        </ul>
+        <p><strong>Examples where iteration is useful:</strong></p>
+        <ul>
+            <li>Array traversal</li>
+            <li>Counting problems</li>
+            <li>Mathematical calculations</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Recursion and iteration are essential concepts in algorithm design. Iteration provides better performance and memory efficiency, while recursion provides elegant and structured solutions for complex problems. Understanding both approaches helps in selecting the best technique depending on the problem requirements.</p>
+
+        <h2>Key Takeaways</h2>
+        <p>Iteration uses loops and constant memory, while recursion uses function calls and additional stack memory. Both can solve similar problems but differ in implementation and memory usage. Proper understanding helps in writing efficient algorithms.</p>
+
+        <h2>References</h2>
+        <ol>
+            <li>Python Documentation – <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">https://docs.python.org/3/</a></li>
+            <li>Anany Levitin,<i>Introduction to the Design and Analysis of Algorithms</i>,Addison-Wesley, 3rd Edition, 2011.</li>
+            <li>Michael T. Goodrich, Data Structures and Algorithms in Python</li>
+            <li>GeeksforGeeks – <a href="https://www.geeksforgeeks.org/recursion/" target="_blank" rel="noopener noreferrer">https://www.geeksforgeeks.org/recursion/</a></li>
+        </ol>
+
+        <h2>AI Usage Declaration</h2>
+        <p>This blog content was prepared for academic learning purposes based on standard Design and Analysis of Algorithms concepts. Some explanations and diagrams were created with the assistance of AI tools (ChatGPT) to improve clarity and visualization. All concepts were reviewed and organized by the author for educational submission.</p>
+
+        <h2>Academic Integrity Statement</h2>
+        <p>I confirm that this submission is prepared for educational purposes and the concepts presented are based on standard algorithm theory. Any external references used are properly acknowledged.</p>
+    </div>
+
+    <div class="footer">
+        <p>DAA Blog – Recursion vs Iteration Analysis | Design and Analysis of Algorithms</p>
+    </div>
+</body>
+</html>
